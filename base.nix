@@ -55,7 +55,7 @@ let
     set -eu
 
     # Install Flatpak applications
-    ${pkgs.flatpak}/bin/flatpak install flathub com.google.Chrome -y
+    ${pkgs.flatpak}/bin/flatpak install flathub com.vivaldi.Vivaldi -y
     ${pkgs.flatpak}/bin/flatpak install flathub us.zoom.Zoom -y
     ${pkgs.flatpak}/bin/flatpak install flathub org.libreoffice.LibreOffice -y
   '';
