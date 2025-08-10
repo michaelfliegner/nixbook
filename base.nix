@@ -55,7 +55,6 @@ let
     set -eu
 
     # Install Flatpak applications
-    ${pkgs.flatpak}/bin/flatpak install flathub com.vivaldi.Vivaldi -y
     ${pkgs.flatpak}/bin/flatpak install flathub us.zoom.Zoom -y
     ${pkgs.flatpak}/bin/flatpak install flathub org.libreoffice.LibreOffice -y
   '';
@@ -198,15 +197,4 @@ in
       User = "root";
       Restart = "on-failure";
       RestartSec = "30s";
-    };
-
-    after = [ "network-online.target" "graphical.target" ];
-    wants = [ "network-online.target" ];
-  };
-  
-}
-
-# Notes
-#
-# To reverse zoom flatpak fix:
-#   flatpak override --unset-env=ZYPAK_ZYGOTE_STRATEGY_SPAWN us.zoom.Zoom
+      
